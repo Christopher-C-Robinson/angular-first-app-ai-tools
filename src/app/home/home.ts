@@ -1,16 +1,20 @@
 import {Component} from '@angular/core';
 import {HousingLocation} from '../housing-location/housing-location';
+import {WeatherWidgetComponent} from '../weather-widget/weather-widget';
 import {HousingLocationInfo} from '../housinglocation';
 
 @Component({
   selector: 'app-home',
-  imports: [HousingLocation],
+  imports: [HousingLocation, WeatherWidgetComponent],
   template: `
     <section>
       <form>
         <input type="text" placeholder="Filter by city" />
         <button class="primary" type="button">Search</button>
       </form>
+    </section>
+    <section class="weather-section">
+      <app-weather-widget></app-weather-widget>
     </section>
     <section class="results">
       @for(housingLocation of housingLocationList; track $index) {
