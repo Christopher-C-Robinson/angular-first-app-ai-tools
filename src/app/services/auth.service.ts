@@ -13,6 +13,7 @@ import {
   switchMap,
   finalize
 } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 import { 
   User, 

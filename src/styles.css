@@ -7,11 +7,20 @@
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
 }
+
 :root {
   --primary-color: #605DC8;
   --secondary-color: #8B89E6;
   --accent-color: #e8e7fa;
   --shadow-color: #E8E8E8;
+}
+
+/* Dark theme custom variables */
+.dark-theme {
+  --primary-color: #7C79E3;
+  --secondary-color: #9B98F5;
+  --accent-color: #2a2a3e;
+  --shadow-color: #1a1a1a;
 }
 
 button.primary {
@@ -21,3 +30,6 @@ button.primary {
   color: white;
   border-radius: 8px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; }
