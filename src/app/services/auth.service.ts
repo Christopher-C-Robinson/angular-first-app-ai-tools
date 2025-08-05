@@ -23,13 +23,17 @@ import {
   AuthErrorCode 
 } from '../models/auth.interface';
 import { ErrorHandlerService } from './error-handler.service';
-import { environment } from 'src/environments/environment';
+
+// Constants for demo authentication
+const MIN_PASSWORD_LENGTH = 6;
+const DEMO_FAIL_EMAIL = 'fail@example.com';
+const DEMO_EXISTING_EMAIL = 'existing@example.com';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_BASE = environment.apiBaseUrl;
+  private readonly API_BASE = 'https://api.example.com'; // Mock API base URL
   private readonly TOKEN_KEY = 'auth_token';
   private readonly REFRESH_TOKEN_KEY = 'refresh_token';
   private readonly USER_KEY = 'current_user';
