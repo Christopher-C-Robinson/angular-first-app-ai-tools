@@ -1,0 +1,16 @@
+# Angular and Node
+node_modules/
+dist/
+tmp/
+out-tsc/
+coverage/
+.env
+
+# IDE files
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
