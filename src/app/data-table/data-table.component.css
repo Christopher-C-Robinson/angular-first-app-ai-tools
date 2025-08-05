@@ -1,0 +1,93 @@
+.data-table-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.stats {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #e3f2fd;
+  border-radius: 4px;
+  border-left: 4px solid #2196f3;
+}
+
+.stats p {
+  margin: 5px 0;
+  font-weight: 500;
+  color: #1976d2;
+}
+
+.table-viewport {
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.data-table th {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: 600;
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table-row {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f0f8ff;
+}
+
+.data-table td {
+  padding: 8px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table td:first-child {
+  font-weight: 600;
+  color: #666;
+}
+
+/* Alternate row styling */
+.table-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table-row:nth-child(even):hover {
+  background-color: #f0f8ff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .data-table-container {
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .table-viewport {
+    height: 300px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+}

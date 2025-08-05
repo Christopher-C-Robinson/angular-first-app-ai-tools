@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, TrackByFunction} from '@angular/core';
 import {HousingLocation} from '../housing-location/housing-location';
 import {HousingLocationInfo} from '../housinglocation';
+import {AuthDemoComponent} from '../components/auth-demo.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HousingLocation],
+  imports: [HousingLocation, AuthDemoComponent],
   template: `
     <section>
       <form>
@@ -12,8 +13,14 @@ import {HousingLocationInfo} from '../housinglocation';
         <button class="primary" type="button">Search</button>
       </form>
     </section>
+    
+    <!-- Authentication Demo Section -->
+    <section class="auth-section">
+      <app-auth-demo></app-auth-demo>
+    </section>
+    
     <section class="results">
-      @for(housingLocation of housingLocationList; track $index) {
+      @for(housingLocation of housingLocationList; track trackByLocationId($index, housingLocation)) {
         <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
       }
     </section>
@@ -125,4 +132,9 @@ export class Home {
       laundry: true,
     },
   ];
+
+  // TrackBy function for optimal performance with housing locations
+  trackByLocationId: TrackByFunction<HousingLocationInfo> = (index: number, location: HousingLocationInfo) => {
+    return location.id; // Use unique identifier for efficient tracking
+  };
 }
