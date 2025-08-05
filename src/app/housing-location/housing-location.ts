@@ -1,5 +1,5 @@
-import {Component, input} from '@angular/core';
-import {HousingLocationInfo} from '../housinglocation';
+import { Component, input } from '@angular/core';
+import { HousingLocationInfo } from '../housinglocation';
 
 @Component({
   selector: 'app-housing-location',
@@ -13,7 +13,9 @@ import {HousingLocationInfo} from '../housinglocation';
         crossorigin
       />
       <h2 class="listing-heading">{{ housingLocation().name }}</h2>
-      <p class="listing-location">{{ housingLocation().city }}, {{ housingLocation().state }}</p>
+      <p class="listing-location">
+        {{ housingLocation().city }}, {{ housingLocation().state }}
+      </p>
     </section>
   `,
   styleUrls: ['./housing-location.css'],

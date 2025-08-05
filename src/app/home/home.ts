@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {HousingLocation} from '../housing-location/housing-location';
-import {HousingLocationInfo} from '../housinglocation';
+import { Component } from '@angular/core';
+import { HousingLocation } from '../housing-location/housing-location';
+import { HousingLocationInfo } from '../housinglocation';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +13,10 @@ import {HousingLocationInfo} from '../housinglocation';
       </form>
     </section>
     <section class="results">
-      @for(housingLocation of housingLocationList; track $index) {
-        <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
+      @for (housingLocation of housingLocationList; track $index) {
+        <app-housing-location
+          [housingLocation]="housingLocation"
+        ></app-housing-location>
       }
     </section>
   `,
