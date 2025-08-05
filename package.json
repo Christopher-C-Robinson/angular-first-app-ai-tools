@@ -5,7 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "format": "prettier --write \"src/**/*.{ts,js,html,css,scss,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js,html,css,scss,json}\""
   },
   "private": true,
   "dependencies": {
@@ -24,7 +28,11 @@
     "@angular/cli": "^20.1.0-next",
     "@angular/compiler-cli": "^20.1.0-next",
     "@types/node": "^16.11.35",
+    "angular-eslint": "20.1.1",
+    "eslint": "^9.29.0",
+    "prettier": "^3.6.2",
     "ts-node": "~10.9.0",
-    "typescript": "~5.8.0"
+    "typescript": "~5.8.0",
+    "typescript-eslint": "8.34.1"
   }
 }
