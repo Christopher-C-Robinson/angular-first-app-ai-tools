@@ -10,7 +10,7 @@ import { User } from '../user';
         class="user-avatar" 
         [src]="user.avatar" 
         [alt]="user.name + ' avatar'"
-        crossorigin
+        
       />
       <h2 class="user-name">{{ user.name }}</h2>
       <p class="user-email">{{ user.email }}</p>
