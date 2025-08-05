@@ -1,10 +1,11 @@
 import {Component, TrackByFunction} from '@angular/core';
 import {HousingLocation} from '../housing-location/housing-location';
 import {HousingLocationInfo} from '../housinglocation';
+import {AuthDemoComponent} from '../components/auth-demo.component';
 
 @Component({
   selector: 'app-home',
-  imports: [HousingLocation],
+  imports: [HousingLocation, AuthDemoComponent],
   template: `
     <section>
       <form>
@@ -12,6 +13,12 @@ import {HousingLocationInfo} from '../housinglocation';
         <button class="primary" type="button">Search</button>
       </form>
     </section>
+    
+    <!-- Authentication Demo Section -->
+    <section class="auth-section">
+      <app-auth-demo></app-auth-demo>
+    </section>
+    
     <section class="results">
       @for(housingLocation of housingLocationList; track trackByLocationId($index, housingLocation)) {
         <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
