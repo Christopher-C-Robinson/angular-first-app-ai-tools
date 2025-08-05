@@ -7,6 +7,12 @@
   justify-content: space-around;
 }
 
+.weather-section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
 input[type="text"] {
   border: solid 1px var(--primary-color);
   padding: 10px;
