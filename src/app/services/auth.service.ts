@@ -23,12 +23,13 @@ import {
   AuthErrorCode 
 } from '../models/auth.interface';
 import { ErrorHandlerService } from './error-handler.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_BASE = 'https://api.example.com/auth'; // Mock API
+  private readonly API_BASE = environment.apiBaseUrl;
   private readonly TOKEN_KEY = 'auth_token';
   private readonly REFRESH_TOKEN_KEY = 'refresh_token';
   private readonly USER_KEY = 'current_user';
@@ -192,8 +193,8 @@ export class AuthService {
     
     if (!credentials.password?.trim()) {
       errors.push('Password is required');
-    } else if (credentials.password.length < 6) {
-      errors.push('Password must be at least 6 characters');
+    } else if (credentials.password.length < MIN_PASSWORD_LENGTH) {
+      errors.push(`Password must be at least ${MIN_PASSWORD_LENGTH} characters`);
     }
     
     if (errors.length > 0) {
@@ -221,8 +222,8 @@ export class AuthService {
     
     if (!userData.password?.trim()) {
       errors.push('Password is required');
-    } else if (userData.password.length < 8) {
-      errors.push('Password must be at least 8 characters');
+    } else if (userData.password.length < MIN_PASSWORD_LENGTH) {
+      errors.push(`Password must be at least ${MIN_PASSWORD_LENGTH} characters`);
     }
     
     if (errors.length > 0) {
@@ -250,7 +251,7 @@ export class AuthService {
       delay(1000), // Simulate network delay
       map(response => {
         // Simulate authentication failure for demo
-        if (credentials.email === 'fail@example.com') {
+        if (credentials.email === DEMO_FAIL_EMAIL) {
           throw { status: 401, error: { message: 'Invalid credentials' } };
         }
         return response;
@@ -273,7 +274,7 @@ export class AuthService {
       delay(1500), // Simulate network delay
       map(response => {
         // Simulate email already exists error for demo
-        if (userData.email === 'exists@example.com') {
+        if (userData.email === DEMO_EXISTING_EMAIL) {
           throw { status: 409, error: { message: 'Email already exists' } };
         }
         return response;
