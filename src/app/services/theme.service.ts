@@ -22,12 +22,22 @@ export class ThemeService {
   }
 
   private getStoredTheme(): boolean {
-    const stored = localStorage.getItem(this.THEME_KEY);
-    return stored ? JSON.parse(stored) : false;
+    try {
+      const stored = localStorage.getItem(this.THEME_KEY);
+      return stored ? JSON.parse(stored) : false;
+    } catch (e) {
+      // localStorage may not be available (SSR, privacy mode, etc.)
+      return false;
+    }
   }
 
   private storeTheme(isDark: boolean): void {
-    localStorage.setItem(this.THEME_KEY, JSON.stringify(isDark));
+    try {
+      localStorage.setItem(this.THEME_KEY, JSON.stringify(isDark));
+    } catch (e) {
+      // Handle localStorage errors gracefully (e.g., quota exceeded, unavailable)
+      console.error('Failed to store theme in localStorage:', e);
+    }
   }
 
   private applyTheme(isDark: boolean): void {

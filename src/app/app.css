@@ -25,5 +25,5 @@
 .content {
   padding: var(--content-padding);
   background-color: var(--mat-sys-surface);
-  min-height: calc(100vh - 64px); /* Subtract toolbar height */
+  min-height: calc(100vh - var(--toolbar-height)); /* Subtract toolbar height */
 }
