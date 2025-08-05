@@ -33,7 +33,7 @@ const DEMO_EXISTING_EMAIL = 'existing@example.com';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_BASE = 'https://api.example.com'; // Mock API base URL
+  private readonly API_BASE = environment.apiBaseUrl; // API base URL from environment config
   private readonly TOKEN_KEY = 'auth_token';
   private readonly REFRESH_TOKEN_KEY = 'refresh_token';
   private readonly USER_KEY = 'current_user';

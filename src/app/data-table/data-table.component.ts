@@ -28,33 +28,31 @@ export interface TableData {
       
       <!-- Virtual scrolling viewport -->
       <cdk-virtual-scroll-viewport itemSize="50" class="table-viewport">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>City</th>
-              <th>Company</th>
-              <th>Department</th>
-              <th>Salary</th>
-              <th>Join Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Using trackBy function for optimal performance -->
-            <tr *cdkVirtualFor="let item of data; trackBy: trackByFn" class="table-row">
-              <td>{{ item.id }}</td>
-              <td>{{ item.name }}</td>
-              <td>{{ item.email }}</td>
-              <td>{{ item.city }}</td>
-              <td>{{ item.company }}</td>
-              <td>{{ item.department }}</td>
-              <td>{{ item.salary | currency }}</td>
-              <td>{{ item.joinDate | date }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- Table header as divs -->
+        <div class="data-table-header table-row">
+          <div class="table-cell">ID</div>
+          <div class="table-cell">Name</div>
+          <div class="table-cell">Email</div>
+          <div class="table-cell">City</div>
+          <div class="table-cell">Company</div>
+          <div class="table-cell">Department</div>
+          <div class="table-cell">Salary</div>
+          <div class="table-cell">Join Date</div>
+        </div>
+        <!-- Virtual scroll rows as divs -->
+        <div
+          *cdkVirtualFor="let item of data; trackBy: trackByFn"
+          class="table-row"
+        >
+          <div class="table-cell">{{ item.id }}</div>
+          <div class="table-cell">{{ item.name }}</div>
+          <div class="table-cell">{{ item.email }}</div>
+          <div class="table-cell">{{ item.city }}</div>
+          <div class="table-cell">{{ item.company }}</div>
+          <div class="table-cell">{{ item.department }}</div>
+          <div class="table-cell">{{ item.salary | currency }}</div>
+          <div class="table-cell">{{ item.joinDate | date }}</div>
+        </div>
       </cdk-virtual-scroll-viewport>
     </div>
   `,
