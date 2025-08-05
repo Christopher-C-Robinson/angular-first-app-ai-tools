@@ -1,0 +1,100 @@
+.user-profile {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: center;
+}
+
+.user-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 3px solid #ddd;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.user-email {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 20px 0;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #007acc;
+  background: #f0f8ff;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-link:hover {
+  background: #e0f0ff;
+  text-decoration: none;
+}
+
+.contact-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .user-profile {
+    margin: 10px;
+    padding: 16px;
+  }
+  
+  .user-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .user-name {
+    font-size: 20px;
+  }
+  
+  .contact-links {
+    gap: 12px;
+  }
+  
+  .contact-link {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-link {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}
